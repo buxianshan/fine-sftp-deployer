@@ -19,7 +19,7 @@ if $CLEAR_REMOTE_PATH
 then
     echo 'ssh start'
     # delete all files in directory $REMOTE_PATH
-    ssh -o StrictHostKeyChecking=no -p PORT -i $SSH_KEY_FILE $USERNAME@$SERVER "cd $REMOTE_PATH; rm -rf ./*"
+    ssh -o StrictHostKeyChecking=no -p $PORT -i $SSH_KEY_FILE $USERNAME@$SERVER "cd $REMOTE_PATH; rm -rf ./*"
     echo 'clear remote path success'
 else
   echo 'do not clear remote path'
