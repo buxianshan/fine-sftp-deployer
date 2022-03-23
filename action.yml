@@ -39,3 +39,7 @@ runs:
     - ${{ inputs.local_path }}
     - ${{ inputs.remote_path }}
     - ${{ inputs.clear_remote_path }}
+
+branding:
+  icon: 'upload-cloud'  
+  color: 'Orange'
