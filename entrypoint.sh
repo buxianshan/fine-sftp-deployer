@@ -12,7 +12,7 @@ CLEAR_REMOTE_PATH=$7
 
 SSH_KEY_FILE='../private_key.pem'
 TEMP_SFTP_FILE='../sftp'
-printf "%s" "$SSH_KEY_STRING" >$SSH_KEY_FILE
+printf "%s" "$SSH_PRIVATE_KEY_STRING" >$SSH_KEY_FILE
 chmod 600 $SSH_KEY_FILE
 
 if $CLEAR_REMOTE_PATH
