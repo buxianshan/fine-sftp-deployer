@@ -1,0 +1,41 @@
+# action.yml
+name: 'Fine SFTP Deployer'
+description: 'Deploy files to your server with SFTP.'
+inputs:
+  username:
+    description: 'username'
+    required: true
+  server:  
+    description: 'your server ip or domain'
+    required: true
+  port: 
+    description: 'your server ssh port, the default is 22'
+    required: true
+    default: "22"
+  ssh_private_key:
+    description: 'ssh private key'
+    required: true
+  local_path:
+    description: 'local dist file path'
+    required: true
+    default: ./*
+  remote_path:
+    description: 'dist file path on your server'
+    required: true
+  clear_remote_path:
+    description: 'delete all files in remote_path'
+    required: true
+    default: false
+
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.username }}
+    - ${{ inputs.server }}
+    - ${{ inputs.port }}
+    - ${{ inputs.ssh_private_key }}
+    - ${{ inputs.local_path }}
+    - ${{ inputs.remote_path }}
+    - ${{ inputs.clear_remote_path }}
