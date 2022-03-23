@@ -23,6 +23,7 @@ then
     echo 'clear remote path success'
 else
   echo 'do not clear remote path'
+fi
 
 echo 'sftp start'
 printf "%s" "put -r $LOCAL_PATH $REMOTE_PATH" >$TEMP_SFTP_FILE
